@@ -1,0 +1,40 @@
+#default settings for sessions
+[DEFAULT]#This will applies to all sessions
+ConnectionType=initiator
+LogonTimeout=30
+ReconnectInterval=5
+ResetOnLogon=Y
+FileLogPath=./Client_Logs
+ValidateIncomingMessage=N
+
+[SESSION]#A single session
+BeginString=FIX.4.2
+SenderCompID=BANZAI41
+TargetCompID=EXEC41
+StartDay=sunday
+EndDay=friday
+StartTime=00:00:00
+EndTime=00:00:00
+HeartBtInt=5
+CheckLatency=N
+SocketConnectPort=3354
+SocketConnectHost=localhost
+UseDataDictionary=Y
+DataDictionary=./FIX42.xml
+FileStorePath=./Client_Seq_Store
+
+[SESSION]#B single session
+BeginString=FIX.4.2
+SenderCompID=BANZAI42
+TargetCompID=EXEC42
+StartDay=sunday
+EndDay=friday
+StartTime=00:00:00
+EndTime=00:00:00
+HeartBtInt=5
+CheckLatency=N
+SocketConnectPort=3355
+SocketConnectHost=localhost
+UseDataDictionary=Y
+DataDictionary=./FIX42.xml
+FileStorePath=./Client_Seq_Store
